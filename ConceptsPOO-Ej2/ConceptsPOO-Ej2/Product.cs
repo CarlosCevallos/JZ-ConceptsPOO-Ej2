@@ -7,6 +7,8 @@
         public decimal Price { get; set; }
         public float Tax { get; set; }
 
+        //--- Metodos
+
         public abstract decimal ValueToPay();
         public override string ToString()
         {
