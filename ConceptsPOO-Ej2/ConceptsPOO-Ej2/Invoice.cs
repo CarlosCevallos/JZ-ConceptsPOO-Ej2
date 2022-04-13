@@ -2,11 +2,12 @@
 {
     internal class Invoice : IPay
     {
-        private List<Product> _products;
+        //private ICollection<Product> _products = new HashSet<Product>();
+        private ICollection<Product> _products = new List<Product>();
 
         public Invoice()
         {
-            if (_products != null) { _products.Clear(); }
+            if (_products.Count > 0 != null) { _products.Clear(); }
         }
 
         //--- Methods ----------------------------------
@@ -14,13 +15,24 @@
         {
             return -99;
         }
-        public void AddProduct(List<Product> listProduct) { _products.Add(listProduct); }
+        public void AddProduct(Product product) { _products.Add(product); }
         public override string ToString()
         {
-            return $"RECEIPT" +
+            decimal ProductsValTotal = 0M;
+            string textResult = "";
+
+            foreach (Product itemProduc in _products)
+            {
+                ProductsValTotal += itemProduc.ValueToPay();
+                textResult += $"\n{itemProduc}";
+            }
+            textResult = $"RECEIPT" +
                 $"\n-------------------------------------------------" +
-                $"{base.ToString()}"
-                ;
+                $"{textResult}" +
+                $"\n                                 =============" +
+                $"\n{ProductsValTotal,46:C2}";
+
+            return textResult;
         }
     }
 }

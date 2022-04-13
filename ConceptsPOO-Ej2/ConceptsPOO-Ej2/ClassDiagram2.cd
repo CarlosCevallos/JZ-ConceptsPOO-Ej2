@@ -29,6 +29,14 @@
       <FileName>ComposedProduct.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ConceptsPOO_Ej2.Invoice">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAASAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Invoice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="ConceptsPOO_Ej2.IPay">
     <Position X="2" Y="1.25" Width="1.5" />
     <TypeIdentifier>
